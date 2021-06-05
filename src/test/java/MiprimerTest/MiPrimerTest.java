@@ -27,7 +27,7 @@ public class MiPrimerTest
         driver.get("https://www.amazon.com/");
     }
 
-    @Test
+    /*@Test
     public void TestAmazon ()throws InterruptedException
     {
        // Thread.sleep(5000);
@@ -35,11 +35,23 @@ public class MiPrimerTest
         WebElement inputBusqueda = driver.findElement(By.id("twotabsearchtextbox"));
         inputBusqueda.click();
         inputBusqueda.sendKeys("Alexa");
-        Thread.sleep(4000);
-        WebElement bottonLupa = driver.findElement(By.id("nav-search-submit-button"));
-        bottonLupa.click();
-        //inputBusqueda.submit();
-        Thread.sleep(4000);
+        inputBusqueda.submit();
+        Thread.sleep(2000);
+
+    }*/
+
+    @Test
+    public void UsoXpath () throws InterruptedException
+    {
+        //Este Xpath es absoluto por buenas practicas no se debe utilizar
+        /*WebElement bottonCompras = driver.findElement(By.xpath("/html/body/div[1]/header/div/div[1]/div[3]/div/a[4]/div[2]/span[2]"));
+        bottonCompras.click();
+        Thread.sleep(5000);*/
+
+        WebElement buttonCompras = driver.findElement(By.xpath("//span[@id='nav-cart-count']"));
+        buttonCompras.click();
+        Thread.sleep(5000);
+
     }
 
     @After
