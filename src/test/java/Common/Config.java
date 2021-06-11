@@ -13,7 +13,7 @@ public class Config
     public static WebDriver navegadorChrome ()
     {
         System.getProperty("webdriver.chrome.driver\", \"src/main/resources/Drivers/ChromeDriver/chromedriver.exe");
-        return new ChromeDriver()
+        return new ChromeDriver();
     }
 }
 

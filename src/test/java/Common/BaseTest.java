@@ -19,7 +19,7 @@ public class BaseTest
         driver.manage().window().maximize();
 
         //Login
-        driver.get(Config.URL_QA)
+        driver.get(Config.URL_QA);
 
     }
 }
