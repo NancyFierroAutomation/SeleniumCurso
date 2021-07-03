@@ -41,8 +41,9 @@ public class Tarea
 
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("window.scrollBy (0,350)");
-        Thread.sleep(3000);
+        Thread.sleep(2000);
 
+        //Caso exitoso
         WebElement inputUser = driver.findElement(By.id("email"));
         inputUser.click();
         inputUser.clear();
@@ -50,6 +51,78 @@ public class Tarea
         Thread.sleep(2000);
 
 
+        WebElement inputPassword = driver.findElement(By.id("passwd"));
+        inputPassword.click();
+        inputPassword.clear();
+        inputPassword.sendKeys("test1234");
+        Thread.sleep(2000);
+
+        WebElement buttonRegistro = driver.findElement(By.xpath("//i[@class='icon-lock left']"));
+        buttonRegistro.click();
+        Thread.sleep(2000);
+
+        //Correo electronico fallido
+        /*WebElement inputUser = driver.findElement(By.id("email"));
+        inputUser.click();
+        inputUser.clear();
+        inputUser.sendKeys("test.0@test");
+        Thread.sleep(2000);
+
+        WebElement inputPassword = driver.findElement(By.id("passwd"));
+        inputPassword.click();
+        inputPassword.clear();
+        inputPassword.sendKeys("test1234");
+        Thread.sleep(2000);
+
+        WebElement buttonRegistro = driver.findElement(By.xpath("//i[@class='icon-lock left']"));
+        buttonRegistro.click();
+        Thread.sleep(2000);
+
+        WebElement divAlerta1 = driver.findElement(By.className("alert alert-danger"));
+        divAlerta1.click();
+        Thread.sleep(2000);*/
+
+        //Contraseña erronea
+        /*WebElement inputUser = driver.findElement(By.id("email"));
+        inputUser.click();
+        inputUser.clear();
+        inputUser.sendKeys("test.0@test.com");
+        Thread.sleep(2000);
+
+        WebElement inputPassword = driver.findElement(By.id("passwd"));
+        inputPassword.click();
+        inputPassword.clear();
+        inputPassword.sendKeys("test123");
+        Thread.sleep(2000);
+
+        WebElement buttonRegistro = driver.findElement(By.xpath("//i[@class='icon-lock left']"));
+        buttonRegistro.click();
+        Thread.sleep(2000);
+
+        WebElement divAlerta1 = driver.findElement(By.className("alert alert-danger"));
+        divAlerta1.click();
+        Thread.sleep(2000);*/
+
+        //Ningun campo correcto
+        /*WebElement inputUser = driver.findElement(By.id("email"));
+        inputUser.click();
+        inputUser.clear();
+        inputUser.sendKeys("test.0@test.");
+        Thread.sleep(2000);
+
+        WebElement inputPassword = driver.findElement(By.id("passwd"));
+        inputPassword.click();
+        inputPassword.clear();
+        inputPassword.sendKeys("test");
+        Thread.sleep(2000);
+
+        WebElement buttonRegistro = driver.findElement(By.xpath("//i[@class='icon-lock left']"));
+        buttonRegistro.click();
+        Thread.sleep(2000);
+
+        WebElement divAlerta1 = driver.findElement(By.className("alert alert-danger"));
+        divAlerta1.click();
+        Thread.sleep(2000);*/
 
     }
 
