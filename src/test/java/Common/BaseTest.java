@@ -1,68 +1,40 @@
 package Common;
 
-import Elements.ElementsLogin;
 import Features.Login;
 import org.junit.After;
-import org.junit.Assert;
 import org.junit.Before;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.FluentWait;
-import org.openqa.selenium.support.ui.Wait;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.time.Duration;
-import java.util.NoSuchElementException;
-import java.util.concurrent.TimeUnit;
-import java.util.function.Function;
 
 public class BaseTest
 {
     //***********INSTANCIAS************
     public static WebDriver driver = null;
     Login login = new Login();
-    ElementsLogin elementsLogin = new ElementsLogin();
 
     @Before
     public void Login () throws Exception
 
     {
-    //Crear driver
+        //Crear driver
         driver = Config.navegadorFirefox();
+
+        //Maximiza ventana
         driver.manage().window().maximize();
+
+        //La Función "driver.get", nos sirve para mandar la URL al navegador
         driver.get(Config.URL_QA);
+
+        //Por medio del objeto "login", mandamos traer (INSTANCIAMOS) el proceso de inciar sesión
         login.miLogin(driver);
 
-        //**********IMPLICIT WAIT**********
-        //driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS)
-
-        //**********EXPLICIT WAIT**********
-        //Explicits: WebDriverWait y Thread.Sleep();
-        //WebDriverWait wait = new WebDriverWait(driver,10);
-        //wait.until(ExpectedConditions.presenceOfElementLocated(elementsLogin.byButtonSignin));
-
-        //**********FLUENT WAIT**********
-        /*Wait<WebDriver> fWait = new FluentWait<WebDriver>(driver)
-                .withTimeout(Duration.ofSeconds(10))
-                .pollingEvery(Duration.ofSeconds(3))
-                .ignoring(NoSuchElementException.class);
-
-        WebElement btnSignin = fWait.until(new Function<WebDriver, WebElement>() {
-
-            public WebElement apply(WebDriver driver) {
-                return driver.findElement(elementsLogin.byButtonSignin);
-            }
-        });
-
-        Assert.assertTrue(driver.findElement(elementsLogin.byButtonSignin).isDisplayed());*/
 
     }
 
     @After
     public void tearDown()
     {
-    //Cierra el navegador
+        //La Función "driver.quit", nos sirve para cerrar el navegador
         driver.quit();
     }
 }

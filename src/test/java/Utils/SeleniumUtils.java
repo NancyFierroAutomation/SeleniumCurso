@@ -22,4 +22,10 @@ public class SeleniumUtils
         LimpiarInput(input);
         input.sendKeys(data);
     }
+
+    public void loading(WebDriver driver, int timeMiliseconds) throws Exception
+    {
+        Thread.sleep(timeMiliseconds);
+
+    }
 }
