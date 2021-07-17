@@ -19,7 +19,7 @@ public class Login
     {
         Thread.sleep(2000);
         //Se da clic en el ButtonSignin
-        utils.ClickButton(elementsLogin.ButtonSignin(driver));
+        utils.clickButton(elementsLogin.ButtonSignin(driver));
         Thread.sleep(2000);
 
 
@@ -29,18 +29,21 @@ public class Login
         Thread.sleep(2000);
 
         //Se da clic y se llena el input user
-        utils.ClickButton(elementsLogin.InputUser(driver));
+        utils.clickButton(elementsLogin.InputUser(driver));
         utils.limpiarYLlenarInput(elementsLogin.InputUser(driver), Config.user);
         Thread.sleep(2000);
 
         //Se da clic y se llena el input password
-        utils.ClickButton(elementsLogin.InputPassword(driver));
+        utils.clickButton(elementsLogin.InputPassword(driver));
         utils.limpiarYLlenarInput(elementsLogin.InputPassword(driver), Config.password);
         Thread.sleep(2000);
 
         //Se da clic en el botón sing in
-        WebElement buttonSignIn = driver.findElement(By.id("SubmitLogin"));
+        /*WebElement buttonSignIn = driver.findElement(By.id("SubmitLogin"));
         buttonSignIn.click();
+        Thread.sleep(2000);*/
+
+        utils.clickButton(elementsLogin.ButtonSignin(driver));
         Thread.sleep(2000);
     }
 

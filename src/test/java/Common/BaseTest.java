@@ -5,11 +5,13 @@ import org.junit.After;
 import org.junit.Before;
 import org.openqa.selenium.WebDriver;
 
+import java.util.concurrent.TimeUnit;
+
 
 public class BaseTest
 {
     //***********INSTANCIAS************
-    public static WebDriver driver = null;
+    protected static WebDriver driver = null;
     Login login = new Login();
 
     @Before
@@ -25,9 +27,10 @@ public class BaseTest
         //La Función "driver.get", nos sirve para mandar la URL al navegador
         driver.get(Config.URL_QA);
 
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+
         //Por medio del objeto "login", mandamos traer (INSTANCIAMOS) el proceso de inciar sesión
         login.miLogin(driver);
-
 
     }
 
