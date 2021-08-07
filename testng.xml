@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd"><suite name="All Test Suite">
+
+    <listeners>
+        <listener class-name="ExtentReportListener.ExtentReport">
+
+
+        </listener>
+
+        
+    </listeners>
+
+
+    <test name="C:/Users/Nancy Fierro/Desktop/Automatizaci�n/SeleniumCurso">
+        <classes>
+            <class name="Features.Alertas"><methods><include name="alerts"/></methods></class>
+            <class name="Features.DragAndDrop"><methods><include name="dragAndDrop"/></methods></class>
+            <class name="Features.MiPrimerTest"><methods><include name="UsoXpath"/></methods></class>
+            <class name="Features.Selects"><methods><include name="ListaConClicks"/><include name="listaConSendKeys"/><include name="listaUsandoClaseSelect"/></methods></class>
+            <class name="Features.Waits"><methods><include name="waits"/></methods></class>
+            <class name="Tarea.Tarea"><methods><include name="TestPactice"/></methods></class>
+        </classes>
+    </test>
+</suite>

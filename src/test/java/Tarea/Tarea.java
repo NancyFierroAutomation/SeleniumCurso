@@ -1,20 +1,20 @@
 package Tarea;
 
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
 
 
 public class Tarea
 
 {
     private WebDriver driver;
-    @Before
+    @BeforeTest
     public void setUp ()
     {
         //Se coloca la dirección del driver, sea chrome, sea mozilla o edge.
@@ -126,7 +126,7 @@ public class Tarea
 
     }
 
-    @After
+    @AfterTest
     public void tearDown()
     {
         //Cierra el navegador

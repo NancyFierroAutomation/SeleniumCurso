@@ -34,31 +34,26 @@ public class SeleniumUtils
 
     }
 
-    public WebElement waitElement (WebDriver driver, WebElement element, By locator)
+    public WebElement waitElement (WebDriver driver, By locator)
     {
         Wait<WebDriver> wait = new FluentWait<WebDriver>(driver)
                 .withTimeout(Duration.ofSeconds(30))
                 .pollingEvery(Duration.ofSeconds(3));
 
-        WebElement elemento = wait.until(new Function<WebDriver, WebElement>() {
+        WebElement elemento = wait.until(new Function<WebDriver, WebElement>()
+        {
 
-            public WebElement apply(WebDriver driver) {
+            public WebElement apply(WebDriver driver)
+            {
 
                 try {
-                    if (element.isDisplayed()) {
-                        return wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
-                    } else {
-                        return wait.until(ExpectedConditions.presenceOfElementLocated(locator));
-                    }
-
-
-                } catch (NoSuchElementException nsee) {
+                    return wait.until(ExpectedConditions.presenceOfElementLocated(locator));
+                } catch (NoSuchElementException nsee)
+                {
                     throw new NoSuchElementException("NoSuchElementException: Locator not found" + locator);
-                } catch (TimeoutException toe) {
-                    throw new TimeoutException("TimeoutException : Locator not visible" + locator);
                 }
             }
         });
         return null;
+        }
     }
-}

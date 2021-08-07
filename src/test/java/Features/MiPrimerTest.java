@@ -1,17 +1,18 @@
-package MiprimerTest;
+package Features;
 
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
 
 public class MiPrimerTest
 {
     private WebDriver driver;
-    @Before
+
+    @BeforeTest
     public void setUp ()
     {
         //Se coloca la dirección del driver, sea chrome, sea mozilla o edge.
@@ -75,7 +76,7 @@ public class MiPrimerTest
         Thread.sleep(5000);
     }
 
-    @After
+    @AfterTest
     public void tearDown()
     {
         //Cierra el navegador
